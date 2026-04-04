@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeGuard — Security Management</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="logo">
+      <div class="logo-mark">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+      </div>
+      <span>We<span class="logo-word">Guard</span></span>
+    </div>
+    <div class="role-switcher">
+      <button class="role-btn active" onclick="switchRole('admin', this)">Admin</button>
+      <button class="role-btn" onclick="switchRole('guard', this)">Guard</button>
+      <button class="role-btn" onclick="switchRole('client', this)">Client</button>
+    </div>
+    <div class="user-pill">
+      <div class="avatar" id="u-av">AD</div>
+      <span id="u-name">Admin</span>
+    </div>
+  </div>
+
+  <!-- LAYOUT -->
+  <div class="layout">
+    <div class="sidebar" id="sidebar"></div>
+    <div class="main" id="main"></div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="modal-wrap" id="modal-wrap" onclick="maybeClose(event)">
+    <div class="modal">
+      <div class="modal-title" id="m-title"></div>
+      <div id="m-body"></div>
+      <div class="modal-footer" id="m-foot"></div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/modals.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
