@@ -1,1 +1,1 @@
-/* map.js — exported from sites.js */
+/* map.js — defined in sites.js */

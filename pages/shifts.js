@@ -1,1 +1,1 @@
-/* shifts.js — re-exported from sites.js */
+/* shifts.js — defined in sites.js */

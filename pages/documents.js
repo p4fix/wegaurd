@@ -1,1 +1,1 @@
-/* documents.js — exported from sites.js */
+/* documents.js — defined in sites.js */

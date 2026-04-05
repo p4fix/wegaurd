@@ -1,1 +1,1 @@
-/* billing.js — exported from sites.js */
+/* billing.js — defined in sites.js */

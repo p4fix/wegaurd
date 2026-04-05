@@ -1,134 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>WeGuard Pro</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/style.css"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>WeGuard Pro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-<!-- LOGIN -->
-<div id="login-screen" class="login-screen">
-  <div class="login-card">
-    <div class="login-logo">
-      <div class="logo-mark lg"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
-      <div>
-        <div class="login-brand">We<span>Guard</span> Pro</div>
-        <div class="login-sub">Security Operations Platform</div>
+<!-- ══ LOGIN ══ -->
+<div id="login-screen">
+  <div class="login-bg">
+    <div class="login-orb orb1"></div>
+    <div class="login-orb orb2"></div>
+    <div class="login-orb orb3"></div>
+    <div class="login-grid"></div>
+  </div>
+  <div class="login-left">
+    <div class="login-hero">
+      <div class="login-shield">
+        <svg viewBox="0 0 100 120" class="shield-svg">
+          <defs>
+            <linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#52B788"/>
+              <stop offset="100%" style="stop-color:#2D6A4F"/>
+            </linearGradient>
+          </defs>
+          <path d="M50 5 L90 22 L90 55 C90 78 72 97 50 105 C28 97 10 78 10 55 L10 22 Z" fill="url(#sg)" opacity="0.15"/>
+          <path d="M50 10 L85 25 L85 55 C85 76 68 94 50 102 C32 94 15 76 15 55 L15 25 Z" fill="none" stroke="url(#sg)" stroke-width="1.5"/>
+          <path d="M50 28 L70 37 L70 55 C70 66 61 75 50 79 C39 75 30 66 30 55 L30 37 Z" fill="url(#sg)" opacity="0.3"/>
+          <polyline points="38,54 46,63 63,44" fill="none" stroke="#52B788" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="shield-rings">
+          <div class="shield-ring r1"></div>
+          <div class="shield-ring r2"></div>
+          <div class="shield-ring r3"></div>
+        </div>
+      </div>
+      <div class="hero-brand">We<span>Guard</span> Pro</div>
+      <div class="hero-tagline">Enterprise Security Operations Platform</div>
+      <div class="hero-stats">
+        <div class="hs"><div class="hs-num">500+</div><div class="hs-label">Guards managed</div></div>
+        <div class="hs-div"></div>
+        <div class="hs"><div class="hs-num">99.9%</div><div class="hs-label">Uptime</div></div>
+        <div class="hs-div"></div>
+        <div class="hs"><div class="hs-num">24/7</div><div class="hs-label">Monitoring</div></div>
       </div>
     </div>
-    <div class="form-row">
-      <label class="form-label">Email</label>
-      <input type="email" id="l-email" placeholder="you@company.com"/>
-    </div>
-    <div class="form-row">
-      <label class="form-label">Password</label>
-      <input type="password" id="l-pass" placeholder="••••••••"/>
-    </div>
-    <div id="l-error" class="error-msg" style="display:none"></div>
-    <button class="btn btn-primary w-full" id="l-btn" onclick="doLogin()">Sign in</button>
-    <div class="login-demo-box">
-      <div class="demo-title">Demo accounts</div>
-      <div class="demo-row" onclick="fillDemo('admin@weguard.com','admin123')"><span class="badge badge-teal">Admin</span> admin@weguard.com / admin123</div>
-      <div class="demo-row" onclick="fillDemo('guard@weguard.com','guard123')"><span class="badge badge-blue">Guard</span> guard@weguard.com / guard123</div>
-      <div class="demo-row" onclick="fillDemo('client@weguard.com','client123')"><span class="badge badge-amber">Client</span> client@weguard.com / client123</div>
+  </div>
+  <div class="login-right">
+    <div class="login-card">
+      <div class="lc-logo">
+        <div class="lc-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="#52B788"/></svg></div>
+        <span>WeGuard</span>
+      </div>
+      <h2 class="lc-title">Welcome back</h2>
+      <p class="lc-sub">Sign in to your operations dashboard</p>
+      <div class="lc-field">
+        <label>Email address</label>
+        <div class="field-wrap"><span class="field-ico">✉</span><input type="email" id="l-email" placeholder="you@company.com"/></div>
+      </div>
+      <div class="lc-field">
+        <label>Password</label>
+        <div class="field-wrap"><span class="field-ico">🔒</span><input type="password" id="l-pass" placeholder="••••••••"/></div>
+      </div>
+      <div id="l-error" class="lc-error" style="display:none"></div>
+      <button class="lc-btn" id="l-btn" onclick="doLogin()">
+        <span>Sign in</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+      <div class="lc-demo">
+        <div class="lc-demo-title">Quick demo access</div>
+        <div class="demo-pills">
+          <div class="demo-pill" onclick="fillDemo('admin@weguard.com','admin123')"><span class="dp-role admin">Admin</span>admin@weguard.com</div>
+          <div class="demo-pill" onclick="fillDemo('guard@weguard.com','guard123')"><span class="dp-role guard">Guard</span>guard@weguard.com</div>
+          <div class="demo-pill" onclick="fillDemo('client@weguard.com','client123')"><span class="dp-role client">Client</span>client@weguard.com</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- SOS OVERLAY -->
-<div id="sos-overlay" class="sos-overlay" style="display:none">
+<!-- ══ SOS ══ -->
+<div id="sos-overlay" style="display:none">
+  <div class="sos-bg"></div>
   <div class="sos-box">
-    <div class="sos-rings"><div class="sos-ring r1"></div><div class="sos-ring r2"></div><div class="sos-ring r3"></div></div>
-    <div class="sos-icon">SOS</div>
+    <div class="sos-radar"><div class="sos-sweep"></div><div class="sos-dot"></div></div>
+    <div class="sos-badge">SOS</div>
     <div class="sos-title">EMERGENCY ALERT</div>
-    <div class="sos-guard" id="sos-guard-name">Guard in distress</div>
-    <div class="sos-location" id="sos-location">Broadcasting location...</div>
+    <div class="sos-guard" id="sos-guard">Guard in distress</div>
+    <div class="sos-loc" id="sos-loc">Broadcasting location...</div>
     <div class="sos-time" id="sos-time"></div>
-    <div style="display:flex;gap:10px;justify-content:center;margin-top:1rem">
+    <div class="sos-actions">
       <button class="btn btn-danger" onclick="dismissSOS()">Dismiss</button>
-      <button class="btn" onclick="go('map')">View on map</button>
+      <button class="btn btn-outline" onclick="dismissSOS();go('map')">View on map</button>
     </div>
   </div>
 </div>
 
-<!-- APP SHELL -->
+<!-- ══ APP ══ -->
 <div id="app" style="display:none">
 
   <!-- TOPBAR -->
-  <div class="topbar">
-    <div class="topbar-left">
-      <button class="hamburger" onclick="toggleSidebar()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  <header class="topbar">
+    <div class="tb-left">
+      <button class="tb-hamburger" onclick="toggleSidebar()">
+        <span></span><span></span><span></span>
       </button>
-      <div class="logo">
-        <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
-        <span class="logo-text">We<span>Guard</span> Pro</span>
+      <div class="tb-logo">
+        <svg viewBox="0 0 24 24" width="22" height="22"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" fill="#52B788"/></svg>
+        We<span>Guard</span> Pro
       </div>
     </div>
-    <div class="topbar-center">
-      <div class="alert-ticker" id="alert-ticker">
-        <span class="ticker-dot"></span>
-        <span id="ticker-text">All systems operational — 5 guards on duty</span>
+    <div class="tb-center">
+      <div class="tb-ticker">
+        <div class="ticker-pulse"></div>
+        <span id="ticker-text">All systems operational</span>
       </div>
     </div>
-    <div class="topbar-right">
-      <button class="icon-btn sos-trigger" onclick="triggerSOS()" title="Test SOS">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <div class="tb-right">
+      <button class="tb-sos" onclick="triggerSOS()" title="SOS">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        SOS
       </button>
-      <button class="icon-btn" onclick="toggleNotifs()" style="position:relative">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-        <span class="notif-badge" id="notif-count">4</span>
+      <button class="tb-icon" onclick="toggleNotifs()" id="notif-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="18" height="18"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+        <span class="tb-badge" id="notif-count">4</span>
       </button>
-      <div class="user-chip" onclick="toggleUserMenu()">
-        <div class="avatar sm" id="top-avatar">AD</div>
-        <span id="top-name">Admin</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="11" height="11"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="tb-user" onclick="toggleUserMenu()">
+        <div class="tb-avatar" id="top-avatar">AD</div>
+        <div class="tb-uinfo">
+          <span id="top-name">Admin</span>
+          <span id="top-role" class="tb-role">Administrator</span>
+        </div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12"><polyline points="6 9 12 15 18 9"/></svg>
       </div>
     </div>
-  </div>
+  </header>
 
   <!-- USER MENU -->
-  <div class="user-menu" id="user-menu" style="display:none">
-    <div class="um-header">
-      <div class="avatar md" id="um-avatar">AD</div>
-      <div><div id="um-name" style="font-weight:500;font-size:13px"></div><div id="um-role" style="font-size:11px;color:var(--text-secondary)"></div></div>
+  <div class="user-menu glass" id="user-menu" style="display:none">
+    <div class="um-profile">
+      <div class="um-avatar" id="um-avatar">AD</div>
+      <div><div id="um-name" class="um-name"></div><div id="um-role" class="um-role-tag"></div></div>
     </div>
-    <div class="um-item" onclick="closeUserMenu()">Settings</div>
-    <div class="um-item" onclick="doLogout()">Sign out</div>
+    <div class="um-divider"></div>
+    <div class="um-item" onclick="closeUserMenu()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg> My profile</div>
+    <div class="um-item danger" onclick="doLogout()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg> Sign out</div>
   </div>
 
-  <!-- NOTIFICATIONS PANEL -->
-  <div class="notif-panel" id="notif-panel" style="display:none">
-    <div class="notif-header"><span>Notifications</span><button class="btn btn-sm" onclick="clearAllNotifs()">Clear all</button></div>
+  <!-- NOTIFICATIONS -->
+  <div class="notif-panel glass" id="notif-panel" style="display:none">
+    <div class="notif-head"><span>Notifications</span><button class="btn-ghost" onclick="clearAllNotifs()">Clear all</button></div>
     <div id="notif-list"></div>
   </div>
 
-  <div class="layout">
-    <div class="sidebar" id="sidebar"><nav id="sidebar-nav"></nav><div class="sidebar-footer">WeGuard Pro v2.0</div></div>
-    <div class="main-wrap"><div class="main" id="main"></div></div>
+  <div class="app-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sb-body" id="sidebar-nav"></div>
+      <div class="sb-footer">
+        <div class="sb-ver">WeGuard Pro v2.0</div>
+        <div class="sb-status"><span class="sb-dot"></span>Live</div>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main-area">
+      <div class="main-inner" id="main"></div>
+    </main>
   </div>
 </div>
 
 <!-- MODAL -->
 <div class="modal-wrap" id="modal-wrap" onclick="maybeCloseModal(event)">
-  <div class="modal" id="modal-box">
+  <div class="modal glass" id="modal-box">
     <div class="modal-head">
       <div class="modal-title" id="modal-title"></div>
-      <button class="modal-close" onclick="closeModal()">×</button>
+      <button class="modal-x" onclick="closeModal()">×</button>
     </div>
     <div class="modal-body" id="modal-body"></div>
     <div class="modal-foot" id="modal-foot"></div>
   </div>
 </div>
 
-<!-- Firebase -->
+<!-- Firebase (paste your config) -->
 <script type="module">
-  import { initializeApp }   from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, createUserWithEmailAndPassword }
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged }
     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
   import { getFirestore, collection, doc, getDocs, addDoc, updateDoc, deleteDoc,
     onSnapshot, serverTimestamp, query, orderBy, where, setDoc, getDoc, limit }
@@ -136,43 +197,32 @@
   import { getStorage, ref, uploadBytes, getDownloadURL }
     from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 
-  // ════════════════════════════════════════════════
-  //  PASTE YOUR FIREBASE CONFIG OBJECT HERE
-  //  Get it from: Firebase Console → Project Settings → Your apps
-  // ════════════════════════════════════════════════
+  // ══ PASTE YOUR FIREBASE CONFIG HERE ══
   const firebaseConfig = {
-    apiKey:            "YOUR_API_KEY",
-    authDomain:        "YOUR_PROJECT.firebaseapp.com",
-    projectId:         "YOUR_PROJECT_ID",
-    storageBucket:     "YOUR_PROJECT.appspot.com",
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
     messagingSenderId: "YOUR_SENDER_ID",
-    appId:             "YOUR_APP_ID"
+    appId: "YOUR_APP_ID"
   };
-  // ════════════════════════════════════════════════
+  // ═════════════════════════════════════
 
-  const fbApp  = initializeApp(firebaseConfig);
-  const auth   = getAuth(fbApp);
-  const db     = getFirestore(fbApp);
-  const store  = getStorage(fbApp);
-
+  const fbApp = initializeApp(firebaseConfig);
   window.FB = {
-    auth, db, store,
-    signInWithEmailAndPassword, signOut, onAuthStateChanged, createUserWithEmailAndPassword,
+    auth: getAuth(fbApp), db: getFirestore(fbApp), store: getStorage(fbApp),
+    signInWithEmailAndPassword, signOut, onAuthStateChanged,
     collection, doc, getDocs, addDoc, updateDoc, deleteDoc,
     onSnapshot, serverTimestamp, query, orderBy, where, setDoc, getDoc, limit
   };
-
   window.addEventListener('load', () => { if (window.bootApp) bootApp(); });
 </script>
 
-<script src="js/demo-data.js"></script>
-<script src="js/state.js"></script>
+<script src="js/data.js"></script>
 <script src="js/helpers.js"></script>
-<script src="js/icons.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/modal.js"></script>
-<script src="js/notifications.js"></script>
-<script src="js/sos.js"></script>
+<script src="js/ui.js"></script>
 <script src="pages/dashboard.js"></script>
 <script src="pages/guards.js"></script>
 <script src="pages/attendance.js"></script>

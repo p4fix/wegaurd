@@ -1,1 +1,1 @@
-/* reports.js — exported from sites.js */
+/* reports.js — defined in sites.js */
